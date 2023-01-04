@@ -13,15 +13,26 @@ The home function is served as a route inside of your server by default. To
 function home(c::Connection)
     pongbod = body("mainbody")
     on(c, pongbod, "click") do cm::ComponentModifier
-        rpc!(c, cm)
+        cm["paddle-left"] = "x" => 400
     end
     Vulta.open(c, pongbod) do vm::VultaModifier
+        pongpaddle_left = rect("paddle-left", width = 10,
+        height = 50)
+        pongball = circle("mycirc", "stroke-width" => 5px, "r" => 10)
         if vm.delta == 1
-            mycirc = circle("mycirc", "stroke-width" => 5px, "r" => 5)
-            spawn!(vm, mycirc, Vec2(100, 100))
+            spawn!(vm, pongball, Vec2(640, 360))
+
+            spawn!(vm, pongpaddle_left, Vec2(620, 360))
+        elseif vm.delta == 55
+            force!(vm, pongpaddle_left, Vec2(10, 0))
         else
-            vm["mycirc"] = "r" => vm.delta
+            if is_colliding(vm, pongpaddle_left, pongball)
+                style!(vm.cm, pongpaddle_left, "color" => "red")
+            else
+    #            style!(vm, pongpaddle_left, "color" => "black")
+            end
         end
+
     end
 end
 
