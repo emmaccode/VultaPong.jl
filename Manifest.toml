@@ -223,9 +223,7 @@ version = "0.2.2"
 
 [[deps.ToolipsSVG]]
 deps = ["Toolips", "ToolipsSession"]
-git-tree-sha1 = "963c63bd4c6578909f18c010de232bd063d82807"
-repo-rev = "main"
-repo-url = "https://github.com/ChifiSource/ToolipsSVG.jl"
+path = "../ToolipsSVG"
 uuid = "8ae86ec9-919d-4ece-9a6d-09b7d28dae11"
 version = "0.1.0"
 
