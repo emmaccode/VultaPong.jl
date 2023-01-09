@@ -221,6 +221,14 @@ repo-url = "https://github.com/ChifiSource/Toolips.jl.git"
 uuid = "a47e2ad8-fcf7-417c-9746-32b9bdf220bd"
 version = "0.2.2"
 
+[[deps.ToolipsDefaults]]
+deps = ["Toolips", "ToolipsSession"]
+git-tree-sha1 = "eb56d3b353d4175e47abb8ba31fadb3781bec2a8"
+repo-rev = "Unstable"
+repo-url = "https://github.com/ChifiSource/ToolipsDefaults"
+uuid = "1710be6b-e895-498d-ba35-e3ff0dac7995"
+version = "0.1.0"
+
 [[deps.ToolipsSVG]]
 deps = ["Toolips", "ToolipsSession"]
 path = "../ToolipsSVG"
